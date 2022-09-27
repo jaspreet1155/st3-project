@@ -1,0 +1,360 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+:root {
+  --white: #ffffff;
+  --orange: #00e9bf;
+  --gray: #959dae;
+}
+::-webkit-scrollbar {
+  width: 0;
+}
+body {
+  font-size: 15px;
+  background-color: #181818;
+  display: flex;
+  color: #ffe6f7;
+}
+
+aside.left-menu {
+  min-width: 20vw;
+  background-color: #202020;
+  height: 100vh;
+  overflow: auto;
+  padding-bottom: 120px;
+}
+aside.left-menu .profile {
+  width: 20vw;
+  height: 16vw;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+aside.left-menu .profile .image {
+  position: relative;
+}
+aside.left-menu .profile .image img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+aside.left-menu .profile span.fullname {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  color: var(--white);
+  margin-top: 20px;
+}
+aside.left-menu .profile span.username {
+  font-weight: 500;
+  font-size: 13px;
+  margin-top: 4px;
+}
+.login-image {
+  height: 35px;
+}
+
+aside.left-menu nav.menu {
+  margin-top: 40px;
+}
+aside.left-menu nav.menu h5 {
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-left: 40px;
+}
+aside.left-menu nav.menu ul {
+  margin-top: 10px;
+}
+aside.left-menu nav.menu ul li {
+  padding: 12px 0;
+  margin-left: 40px;
+  position: relative;
+  display: flex;
+}
+aside.left-menu nav.menu ul li a {
+  display: inline-flex;
+  align-items: center;
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+aside.left-menu nav.menu ul li a span {
+  transition: 0.2s transform;
+}
+aside.left-menu nav.menu ul li.current {
+  margin-left: 0;
+  padding-left: 40px;
+}
+aside.left-menu nav.menu ul li.current a {
+  color: var(--orange);
+}
+
+aside.left-menu nav.menu ul li.current::before {
+  content: "";
+  width: 3px;
+  height: calc(100% - 8px);
+  background-color: var(--orange);
+  position: absolute;
+  top: 4px;
+  left: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+aside.left-menu nav.menu ul li:not(.current) a:hover {
+  color: var(--orange);
+}
+aside.left-menu nav.menu ul li:not(.current) a:hover span:not(.count) {
+  transform: translateX(4px);
+}
+aside.left-menu nav.menu ul li:not(.current) a:hover ion-icon {
+  color: var(--orange);
+}
+section.container {
+  flex: 1;
+}
+section.container > header {
+  height: 80px;
+  background-color: #202020;
+  border-left: 0px;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+}
+section.container > header .search {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+  align-items: center;
+}
+section.container > header .search input {
+  margin-left: 12px;
+  height: 30px;
+  width: 200px;
+  padding: 0px 15px;
+  border-radius: 10px;
+  padding-right: 33px;
+  font-size: 12px;
+  outline: none;
+}
+
+section.container main {
+  height: calc(100vh - 80px);
+  overflow: auto;
+  padding: 30px 0 135px 30px;
+}
+section.container main .track-list:not(:first-child) {
+  margin-top: 30px;
+}
+section.container main .track-list header {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding-right: 30px;
+}
+section.container main .track-list header h2 {
+  flex: 1;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 22px;
+}
+section.container main .track-list header h2 span {
+  color: #00e9bf;
+  font-weight: 600;
+}
+
+section.container main .track-list header .more {
+  color: var(--orange);
+  font-weight: 600;
+}
+section.container main .track-list.slider ul {
+  margin-left: -30px;
+  padding: 30px 0 30px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: calc(80vw);
+  overflow: hidden;
+}
+section.container main .track-list.slider ul li .product-poster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 256px;
+  height: 256px;
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0px 0px 20px -5px var(--shadow);
+  transition: 0.4s box-shadow;
+  will-change: box-shadow;
+}
+section.container main .track-list.slider ul li .product-poster:hover {
+  box-shadow: 0px 0px 20px 0px var(--shadow);
+}
+section.container main .track-list.slider ul li {
+  margin-top: 20px;
+}
+section.container main .track-list.slider ul li .product-name {
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -0.5px;
+  color: var(--white);
+  margin-top: 15px;
+  margin-left: 5px;
+  display: inline-block;
+}
+section.container main .track-list.slider ul li .price {
+  font-size: 12px;
+  margin-top: 5px;
+  margin-left: 5px;
+  font-weight: 500;
+}
+section.container main .track-list.table ul {
+  display: grid;
+  columns: 3;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(5, 1fr);
+  column-gap: 30px;
+  row-gap: 15px;
+  padding-right: 30px;
+  margin-top: 30px;
+}
+section.container main .track-list.table ul li {
+  padding: 16px;
+  background-color: #202020;
+  border-radius: 8px;
+  display: flex;
+}
+section.container main .track-list.table ul li .info-left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  font-weight: 600;
+}
+section.container main .track-list.table ul li .info-left span,
+section.container main .track-list.table ul li .info-left a {
+  color: var(--white);
+  font-size: 13px;
+}
+section.container main .track-list.table ul li .info-left .count {
+  padding: 0 6px;
+  margin-right: 12px;
+}
+section.container main .track-list.table ul li .info-left .poster {
+  border-radius: 4px;
+}
+section.container main .track-list.table ul li .info-left .product-name {
+  margin-left: 12px;
+  transition: 0.4s transform;
+  will-change: transform;
+}
+section.container main .track-list.table ul li .info-left .product-name:hover {
+  transform: translateX(4px);
+}
+section.container main .track-list.table ul li .info-right {
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+section.container main .track-list.table ul li .info-right span,
+section.container main .track-list.table ul li .info-right a {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gray);
+}
+section.container main .track-list.table ul li .info-right .price:hover {
+  color: #00e9bf;
+}
+
+section.container main .add-to-cart ul li .info-right .price:hover {
+  color: #00e9bf;
+}
+
+/* section.container main .track-list.table ul li .info-right .detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+} */
+section.container main .track-list.table ul li .info-right .detail ion-icon {
+  color: var(--gray);
+  cursor: pointer;
+  font-size: 22px;
+  margin-left: 24px;
+}
+section.container
+  main
+  .track-list.table
+  ul
+  li
+  .info-right
+  .detail
+  ion-icon:hover {
+  color: var(--white);
+}
+
+.detail {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  width: 140px;
+  height: 40px;
+  justify-content: space-evenly;
+  display: flex;
+  align-items: center;
+}
+.btn1 {
+  width: 140px;
+  height: 40px;
+  justify-content: space-evenly;
+  display: flex;
+  align-items: center;
+}
+
+.btn button {
+  background: border-box;
+  border: whte;
+  font-size: 1rem;
+  color: #00e9bf;
+  cursor: pointer;
+  outline: none;
+  box-shadow: white;
+}
+.btn1 button {
+  background: border-box;
+  border: whte;
+  font-size: 1rem;
+  color: #00e9bf;
+  cursor: pointer;
+  outline: none;
+  box-shadow: white;
+}
+.minusBtn.plusbtn {
+  display: none;
+}
+#srch {
+  height: 15px;
+  position: absolute;
+  top: 33px;
+  right: 40px;
+}
